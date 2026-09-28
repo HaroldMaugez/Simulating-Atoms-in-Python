@@ -20,3 +20,13 @@ So the first step is to initialize a window. I have to check the official docume
 ##### So let's put that into one simple code
 
 ![FirstCommit](/images/InitializePygame.png)
+
+In his video, the nexte step is to make a simple atom like evryone learned, for this he used a complexe system of calculation to make a circle. Luckly for me, I can do that with only one line in python : pygame.show.circle()
+
+![pygame.draw.circle()](/images/DrawCircle.png)
+
+So, I looked what parameters he used to take the same.
+Then, I did a simple condition to color and resize the particule wether it's a proton, a neutron or an electron. Made the electron orbit around the proton with the same maths as him.
+Puting that on a list and now I can create as many atoms as I want just with coordinates.
+
+![A part of the actual code](/images/SimpleAtom.png)
