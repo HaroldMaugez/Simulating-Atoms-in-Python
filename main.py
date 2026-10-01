@@ -41,23 +41,23 @@ while True:
 
   # Boucle pour afficher chaque atome de la liste
   for atom in atoms:
-      center_x = atom[0]
-      center_y = atom[1]
+      x = atom[0]
+      y = atom[1]
       
       # 1. Dessiner l'outline de la trajectoire
-      pygame.draw.circle(screen, (50, 50, 50), (center_x, center_y), orbit_distance, 1)
+      pygame.draw.circle(screen, (50, 50, 50), (x, y), orbit_distance, 1)
 
       # 2. Dessiner le proton au centre (charge par défaut = 1)
-      r_red, color_red = colorpicker(1)
-      pygame.draw.circle(screen, color_red, (center_x, center_y), r_red)
+      r, color = colorpicker(1)
+      pygame.draw.circle(screen, color, (x, y), r)
 
       # 3. Calculer la position de l'électron en orbite
-      r_blue, color_blue = colorpicker(-1)
-      blue_x = center_x + orbit_distance * math.cos(atom[2])
-      blue_y = center_y + orbit_distance * math.sin(atom[2])
+      r, color = colorpicker(-1)
+      x = x + orbit_distance * math.cos(atom[2])
+      y = y + orbit_distance * math.sin(atom[2])
 
       # Dessiner l'électron
-      pygame.draw.circle(screen, color_blue, (int(blue_x), int(blue_y)), r_blue)
+      pygame.draw.circle(screen, color, (int(x), int(y)), r)
 
       # Faire avancer l'angle de cet électron pour la prochaine image
       atom[2] += 0.1
